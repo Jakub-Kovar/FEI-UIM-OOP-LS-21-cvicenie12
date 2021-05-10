@@ -1,6 +1,8 @@
 package sk.stuba.fei.uim.oop.cvicenie12.animal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sk.stuba.fei.uim.oop.cvicenie12.animal.AnimalRequest;
 import sk.stuba.fei.uim.oop.cvicenie12.animal.AnimalResponse;
@@ -27,8 +29,8 @@ public class AnimalController {
     }
 
     @PostMapping()
-    public AnimalResponse addAnimal(@RequestBody AnimalRequest request) {
-        return new AnimalResponse(this.service.create(request));
+    public ResponseEntity<AnimalResponse> addAnimal(@RequestBody AnimalRequest request) {
+        return new ResponseEntity<>(new AnimalResponse(this.service.create(request)), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
