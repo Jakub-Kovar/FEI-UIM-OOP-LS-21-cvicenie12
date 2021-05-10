@@ -1,4 +1,4 @@
-package sk.stuba.fei.uim.oop.cvicenie12;
+package sk.stuba.fei.uim.oop.cvicenie12.animal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

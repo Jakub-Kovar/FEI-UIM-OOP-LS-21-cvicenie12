@@ -2,6 +2,9 @@ package sk.stuba.fei.uim.oop.cvicenie12;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sk.stuba.fei.uim.oop.cvicenie12.animal.AnimalRequest;
+import sk.stuba.fei.uim.oop.cvicenie12.animal.AnimalResponse;
+import sk.stuba.fei.uim.oop.cvicenie12.animal.IAnimalService;
 
 import java.util.List;
 import java.util.stream.Collectors;

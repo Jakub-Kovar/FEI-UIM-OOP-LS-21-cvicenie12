@@ -1,4 +1,4 @@
-package sk.stuba.fei.uim.oop.cvicenie12;
+package sk.stuba.fei.uim.oop.cvicenie12.animal;
 
 import java.util.List;
 

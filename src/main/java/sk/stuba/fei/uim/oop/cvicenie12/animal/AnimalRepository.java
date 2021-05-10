@@ -1,4 +1,4 @@
-package sk.stuba.fei.uim.oop.cvicenie12;
+package sk.stuba.fei.uim.oop.cvicenie12.animal;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
