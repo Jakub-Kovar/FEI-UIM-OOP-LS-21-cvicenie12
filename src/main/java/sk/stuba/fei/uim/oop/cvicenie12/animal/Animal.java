@@ -2,7 +2,7 @@ package sk.stuba.fei.uim.oop.cvicenie12.animal;
 
 import lombok.Getter;
 import lombok.Setter;
-import sk.stuba.fei.uim.oop.cvicenie12.person.Person;
+import sk.stuba.fei.uim.oop.cvicenie12.payment.Payment;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,5 +21,5 @@ public class Animal {
     private String name;
 
     @OneToMany
-    private List<Person> person = new ArrayList<>();
+    private List<Payment> payments = new ArrayList<>();
 }

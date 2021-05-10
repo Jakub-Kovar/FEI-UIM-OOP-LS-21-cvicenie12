@@ -2,6 +2,8 @@ package sk.stuba.fei.uim.oop.cvicenie12.animal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sk.stuba.fei.uim.oop.cvicenie12.payment.Payment;
+import sk.stuba.fei.uim.oop.cvicenie12.payment.PaymentRepository;
 import sk.stuba.fei.uim.oop.cvicenie12.person.IPersonService;
 import sk.stuba.fei.uim.oop.cvicenie12.person.Person;
 
@@ -13,6 +15,9 @@ public class AnimalService implements IAnimalService {
 
 
     private AnimalRepository repository;
+
+    @Autowired
+    private PaymentRepository paymentRepository;
 
     @Autowired
     private IPersonService personService;
@@ -56,10 +61,14 @@ public class AnimalService implements IAnimalService {
 
         Person person = this.personService.getById(personId);
 
-        animal.getPerson().add(person);
-        person.setAnimal(animal);
-        this.personService.save(person);
+        Payment payment = new Payment(animal, person, 10);
 
+        payment = this.paymentRepository.save(payment);
+
+        person.getPayments().add(payment);
+        animal.getPayments().add(payment);
+
+        this.personService.save(person);
         return this.repository.save(animal);
     }
 }

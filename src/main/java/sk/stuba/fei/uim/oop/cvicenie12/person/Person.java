@@ -4,8 +4,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import sk.stuba.fei.uim.oop.cvicenie12.animal.Animal;
+import sk.stuba.fei.uim.oop.cvicenie12.payment.Payment;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
@@ -19,8 +22,8 @@ public class Person {
     private String name;
 
     @Setter
-    @ManyToOne
-    private Animal animal;
+    @OneToMany
+    private List<Payment> payments = new ArrayList<>();
 
     public Person(String name) {
         this.name = name;
