@@ -2,11 +2,10 @@ package sk.stuba.fei.uim.oop.cvicenie12.person;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import sk.stuba.fei.uim.oop.cvicenie12.animal.Animal;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Entity
@@ -18,6 +17,10 @@ public class Person {
     private Long id;
 
     private String name;
+
+    @Setter
+    @OneToOne
+    private Animal animal;
 
     public Person(String name) {
         this.name = name;

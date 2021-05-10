@@ -28,4 +28,9 @@ public class PersonService implements IPersonService {
     public Person getById(long id) {
         return this.repository.findById(id).get();
     }
+
+    @Override
+    public Person save(Person p) {
+        return this.repository.save(p);
+    }
 }

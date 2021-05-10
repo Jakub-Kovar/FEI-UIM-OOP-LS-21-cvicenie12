@@ -57,6 +57,8 @@ public class AnimalService implements IAnimalService {
         Person person = this.personService.getById(personId);
 
         animal.setPerson(person);
+        person.setAnimal(animal);
+        this.personService.save(person);
 
         return this.repository.save(animal);
     }
