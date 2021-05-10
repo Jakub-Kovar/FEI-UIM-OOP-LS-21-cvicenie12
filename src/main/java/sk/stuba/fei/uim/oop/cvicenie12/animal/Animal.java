@@ -5,6 +5,8 @@ import lombok.Setter;
 import sk.stuba.fei.uim.oop.cvicenie12.person.Person;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,6 +20,6 @@ public class Animal {
 
     private String name;
 
-    @OneToOne
-    private Person person;
+    @OneToMany
+    private List<Person> person = new ArrayList<>();
 }
