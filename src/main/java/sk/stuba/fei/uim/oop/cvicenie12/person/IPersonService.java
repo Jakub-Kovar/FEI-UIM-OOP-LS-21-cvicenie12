@@ -4,4 +4,5 @@ import java.util.List;
 
 public interface IPersonService {
     List<Person> getAll();
+    Person getById(long id);
 }

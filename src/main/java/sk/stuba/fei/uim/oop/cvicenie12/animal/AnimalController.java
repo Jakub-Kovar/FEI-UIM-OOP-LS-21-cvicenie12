@@ -31,6 +31,11 @@ public class AnimalController {
         return new AnimalResponse(this.service.create(request));
     }
 
+    @PutMapping("/{id}")
+    public AnimalResponse addPersonToAnimal(@PathVariable("id") long animalId, @RequestParam("person") long personId) {
+        return new AnimalResponse(this.service.addPersonToAnimal(animalId, personId));
+    }
+
     @GetMapping("/{name}")
     public List<AnimalResponse> getAllAnimalsByName(@PathVariable("name") String name) {
         return this.service.getAllByName(name).stream().map(AnimalResponse::new).collect(Collectors.toList());
