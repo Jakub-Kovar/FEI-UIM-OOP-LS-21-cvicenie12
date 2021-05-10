@@ -1,6 +1,7 @@
 package sk.stuba.fei.uim.oop.cvicenie12.animal;
 
 import lombok.Getter;
+import sk.stuba.fei.uim.oop.cvicenie12.person.PersonResponse;
 
 @Getter
 public class AnimalResponse {
@@ -11,17 +12,12 @@ public class AnimalResponse {
 
     private String name;
 
-    private Long person;
+    private PersonResponse person;
 
     public AnimalResponse(Animal a) {
         this.id = a.getId();
         this.species = a.getSpecies();
         this.name = a.getName();
-        this.person = a.getPerson() == null ? null : a.getPerson().getId();
-//        if(a.getPerson() == null) {
-//            this.person = null;
-//        } else {
-//            this.person = a.getPerson().getId();
-//        }
+        this.person = a.getPerson() != null ? new PersonResponse(a.getPerson()) : null;
     }
 }
