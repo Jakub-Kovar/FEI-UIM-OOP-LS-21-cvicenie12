@@ -2,6 +2,7 @@ package sk.stuba.fei.uim.oop.cvicenie12.animal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sk.stuba.fei.uim.oop.cvicenie12.exceptions.NotFoundException;
 import sk.stuba.fei.uim.oop.cvicenie12.payment.Payment;
 import sk.stuba.fei.uim.oop.cvicenie12.payment.PaymentRepository;
 import sk.stuba.fei.uim.oop.cvicenie12.person.IPersonService;
@@ -57,7 +58,7 @@ public class AnimalService implements IAnimalService {
     @Override
     public Animal addPersonToAnimal(long animalId, long personId) {
         Optional<Animal> animalOpt = this.repository.findById(animalId);
-        Animal animal = animalOpt.get();
+        Animal animal = animalOpt.orElseThrow(NotFoundException::new);
 
         Person person = this.personService.getById(personId);
 

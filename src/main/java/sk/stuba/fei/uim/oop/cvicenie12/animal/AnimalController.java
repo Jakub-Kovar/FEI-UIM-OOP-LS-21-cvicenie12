@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import sk.stuba.fei.uim.oop.cvicenie12.animal.AnimalRequest;
 import sk.stuba.fei.uim.oop.cvicenie12.animal.AnimalResponse;
 import sk.stuba.fei.uim.oop.cvicenie12.animal.IAnimalService;
+import sk.stuba.fei.uim.oop.cvicenie12.exceptions.NotFoundException;
 
 import java.util.List;
 import java.util.stream.Collectors;
